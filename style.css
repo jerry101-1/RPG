@@ -1,0 +1,157 @@
+/* 全域設定：標楷體 + 暗黑風格 */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: '標楷體', 'BiauKai', 'DFKai-SB', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 隱藏專用 */
+.hidden {
+    display: none !important;
+}
+
+/* 🎮 遊戲卡片容器 */
+.game-container {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    border: 1px solid #3a3a3a;
+}
+
+/* 👾 怪物卡片 */
+.monster-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.monster-card h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: #ff4a4a;
+    letter-spacing: 1px;
+}
+
+/* ❤️ 怪物血條 */
+.hp-bar-container {
+    background-color: #444;
+    border-radius: 20px;
+    height: 18px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #222;
+}
+
+.hp-bar {
+    background: linear-gradient(90deg, #ff3333, #ff5555);
+    height: 100%;
+    width: 100%;
+    transition: width 0.2s ease-in-out;
+}
+
+#monster-hp-text {
+    margin: 0;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* 📜 戰鬥日誌區（無粗體、無滾動條） */
+.battle-log {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    height: 180px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family: '標楷體', 'BiauKai', 'DFKai-SB', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow: hidden; 
+}
+
+.battle-log p {
+    margin: 4px 0;
+    word-break: break-all;
+}
+
+/* 🕹️ 按鈕樣式（拿掉粗體防止標楷體字體模糊） */
+.btn {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: '標楷體', 'BiauKai', 'DFKai-SB', serif;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* 各類型按鈕顏色 */
+.action-buttons, .shop-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-attack { background-color: #dc3545; color: white; }
+.btn-skill { background-color: #007bff; color: white; }
+.btn-village { background-color: #28a745; color: white; }
+
+.btn-shop { background-color: #ff9800; color: #111; }
+
+/* 💎 隱藏商店特效 */
+.btn-secret-shop {
+    background: linear-gradient(45deg, #ffd700, #ff5722);
+    color: white;
+    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); box-shadow: 0 0 15px rgba(255,215,0,0.8); }
+    100% { transform: scale(1); }
+}
+
+/* 📊 玩家狀態欄 */
+.status-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #333;
+}
+
+.status-bar span {
+    color: #ccc;
+}
+
+.highlight {
+    color: #ffeb3b;
+}
