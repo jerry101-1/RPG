@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暗黑風格 RPG 網頁版</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="monster-card">
+            <h2 id="monster-name">等待遭遇怪物...</h2>
+            <div class="hp-bar-container">
+                <div id="monster-hp-bar" class="hp-bar"></div>
+            </div>
+            <p id="monster-hp-text">HP: 0 / 0</p>
+        </div>
+
+        <div id="battle-log" class="battle-log">
+            <p>⚔️ 冒險準備中...</p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-attack" onclick="doAttack()">⚔️ 普通攻擊</button>
+            <button class="btn btn-skill" onclick="doSkill()">⚡ 職業技能</button>
+            <button class="btn btn-village" onclick="goVillage()">🏃‍♂️ 返回村莊</button>
+        </div>
+
+        <div class="shop-buttons">
+            <button class="btn btn-shop" onclick="buyItem('potion')">🧪 特級藥水 ($500)</button>
+            <button class="btn btn-shop" onclick="buyItem('weapon')">⚔️ 鐵匠鋪升級 ($2000)</button>
+            <button id="secret-shop-btn" class="btn btn-secret-shop hidden" onclick="buyItem('secret')">💎 神祕聖劍 ($50000)</button>
+        </div>
+
+        <div class="status-bar">
+            <div>職業: <span id="player-job" class="highlight">加載中</span></div>
+            <div>等級: <span id="player-level" class="highlight">0</span></div>
+            <div>經驗值: <span id="player-exp">0 / 0</span></div>
+            <div>生命值: <span id="player-hp" class="highlight">0</span> / <span id="player-max-hp">0</span></div>
+            <div>持有金幣: <span id="player-money" class="highlight">0</span> G</div>
+        </div>
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+</html>
